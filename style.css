@@ -1185,3 +1185,96 @@ textarea:focus-visible {
 .form-status { margin-top: .75rem; line-height: 1.5; }
 .gallery-caption { padding: .5rem .75rem; text-align: center; }
 .gallery-video-link { display: grid; place-items: center; min-height: 180px; padding: 1rem; text-align: center; }
+
+/* ===== MOBILE RESPONSIVE IMPROVEMENTS ===== */
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 700px) {
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 14px;
+        padding: 10px;
+    }
+
+    .hero {
+        min-height: 75vh;
+        padding: 80px 18px 50px;
+    }
+
+    .hero h1 {
+        font-size: clamp(30px, 8vw, 44px);
+        line-height: 1.15;
+    }
+
+    .hero h2 {
+        font-size: clamp(20px, 5vw, 28px);
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .about-section,
+    .president-section,
+    .cabinet-section,
+    .events-section,
+    .gallery-section,
+    .alumni-section,
+    .contact-section {
+        padding: 60px 18px;
+    }
+
+    .cabinet-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .gallery-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+}
+
+@media (max-width: 420px) {
+    .cabinet-container,
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+
+    .cabinet-card img {
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===== END MOBILE RESPONSIVE IMPROVEMENTS ===== */
+
